@@ -1,0 +1,120 @@
+
+/* Xét mọi thứ về ban đầu */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* biến dùng chung cho tiện lợi */
+:root {
+    /* Color */
+    --gray-color: #2B2B2B;
+    --primary-color:#A259FF;
+    --white--color: #fff;
+
+    /* Fonts */
+    --primary--font: "Work Sans", serif;
+}
+
+body {
+    background-color: var(--gray-color);
+    font-family: var(--primary--font);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--white--color);
+}
+
+ol,ul {
+    list-style-type: none;
+}
+
+a {
+    display: inline-block;
+    color: var(--white--color);
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    color: var(--white--color);
+}
+
+button,input {
+    /* inherit: dùng để cho element đc kế thừa */
+    font-family: inherit;
+}
+
+input:focus {
+    outline: none;
+}
+
+img {
+    display: block;
+
+    /* Giúp thẻ luôn bằng 100% phần tử cha */
+    max-width: 100%;
+
+    /* giúp khi thay đổi tỉ lệ khung k bị vỡ  */
+    object-fit: cover;
+}
+
+select,
+textarea,
+input {
+    color: var(--gray-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 1110px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+/* Button gobal */
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    font-weight: 600;
+    border: 2px solid transparent;
+    padding: 17px 28px;
+    line-height: 22px;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 34px 50px;
+}
+
+.menu {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-link {
+    padding: 12px 20px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+
+
