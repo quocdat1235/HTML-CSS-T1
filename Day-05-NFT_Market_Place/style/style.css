@@ -14,9 +14,11 @@
     --gray-color: #2B2B2B;
     --primary-color:#A259FF;
     --white--color: #fff;
+    --light-gray-color:#3B3B3B;
 
     /* Fonts */
     --primary--font: "Work Sans", serif;
+    --secondary-font:"Space Mono", serif;
 }
 
 body {
@@ -44,12 +46,13 @@ a:hover{
 button {
     background-color: transparent;
     border: 0;
+    cursor: pointer;
     color: var(--white--color);
 }
 
 button,input {
     /* inherit: dùng để cho element đc kế thừa */
-    font-family: inherit;
+    font: inherit;
 }
 
 input:focus {
@@ -79,6 +82,10 @@ input {
     margin: 0 auto;
 }
 
+.section {
+    padding: 80px 0;
+}
+
 /* Button gobal */
 
 .btn {
@@ -86,11 +93,54 @@ input {
     align-items: center;
     gap: 12px;
     border-radius: 20px;
-    background-color: var(--primary-color);
     font-weight: 600;
     border: 2px solid transparent;
-    padding: 17px 28px;
+    padding: 17px 48px;
     line-height: 22px;
+}
+
+.btn.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn.btn-outline {
+    border-color: var(--primary-color);
+}
+
+.btn.btn-white {
+    color: var(--gray-color);
+     background-color: var(--white--color);
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.btn.btn-small {
+    padding: 17px 28px;
+}
+
+.section-heading .section-subtitle {
+    margin-top: 10px;
+
+}
+
+.section-title,
+.section-subtitle {
+    text-transform: capitalize;
+}
+
+
+.section-title {
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    font-size: 22px;
+    line-height: 1.6;
 }
 
 /* Header */
@@ -100,6 +150,7 @@ input {
     align-items: center;
     justify-content: space-between;
     padding: 34px 50px;
+    gap: 30px;
 }
 
 .menu {
@@ -107,14 +158,440 @@ input {
     gap: 10px;
 }
 
-.menu-link {
-    padding: 12px 20px;
-}
-
 .header-nav {
     display: flex;
     align-items: center;
+    gap: 10px;
+}
+
+.menu-link {
+    position: relative;
+    padding: 12px 20px;
+}
+
+.menu-link::after{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--white--color);
+    content: '';
+    transform: translateX(-50%);
+    /* css esasing để bt thêm nhiều hiệu ứng */
+    transition: width 0.2s ease-out;
+}
+
+.menu-link:hover::after{
+    width: calc(100% - 40px);
+
+}
+
+.menu-link:hover{
+    text-decoration: none;
+}
+
+/* Main */
+
+.section-hero .section-heading .section-subtitle {
+    margin-top: 20px;
+}
+
+.section-hero .section-title {
+    font-size: 67px;
+    line-height: 1.1;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.hero-content, 
+.hero-media {
+    flex: 1;
+}
+
+.hero-media {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.section-hero .section-heading .btn {
+    margin-top: 40px;
+}
+
+.statis-list {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.statis-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.statis-total {
+    font-size: 28px;
+    font-family: var(--secondary-font);
+    font-weight: 700;
+}
+
+.hero-media-info {
+    padding: 22px 20px;
+    background-color: var(--light-gray-color);
+}
+
+.nft-artist-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.nft-artist-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.nft-artist-avatar {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+
+/* section-collection */
+
+.content-collection {
+    display: flex;
+    flex: 1;
+    gap: 30px;
+}
+.content-collection {
+    margin-top: 60px;
+}
+
+.collection-span {
+    display: flex;
+    margin-top: 15px;
+    gap: 15px;
+}
+
+.collection-artist {
+    margin-top: 15px;
+}
+
+/* section-creators */
+
+.creators-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.creators-btn {
+    padding-top: 31px;
+}
+
+.creator-list {
+    margin-top: 60px;
+}
+
+.creator-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 
+.creator-item {
+    position: relative;
+    background-color: var(--light-gray-color);
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    width: calc((100% - 90px) / 4);
+}
 
+.creator-item .creator-image img {
+    display: inline;
+}
+
+.creator-item:nth-child(n + 5) {
+    margin-top: 30px;
+}
+
+.creator-rank {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    top: 18px;
+    left: 20px;
+    background-color: #2B2B2B;
+    border-radius: 50%;
+    color: #858584;
+}
+
+.creator-info {
+    margin-top: 20px;
+}
+
+.creator-name {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.creator-sale {
+    /* display: flex; */
+    margin-top: 5px;
+    gap: 10px;
+}
+
+.creator-sale .label {
+    color: #858584;
+}
+
+.creator-sale .coind {
+    font-family: var(--secondary-font);
+}
+
+.browse-list {
+    margin-top: 60px;
+}
+
+.browse-info {
+    padding: 20px 30px;
+    background-color: var(--light-gray-color);
+}
+
+.browse-list {
+    margin-top: 60px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 30px;
+}
+
+.browse-list:nth-child(n + 3) {
+    margin-top: 30px;
+}
+
+.browse-crad {
+    overflow: hidden;
+    background-color: var(--light-gray-color);
+    width: calc(100% - 90px) / 4;
+    border-radius: 20px;
+}
+
+.browse-crad .nft-artist {
+    padding: 20px 30px;
+}
+
+
+/* section-discover */
+
+.discover-haeder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.discover-btn {
+    padding-top: 31px;
+}
+
+.discover-list {
+    margin-top: 60px;
+    display: flex;
+    flex: 1;
+    gap: 30px;
+}
+
+.discover-item {
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: var(--light-gray-color);
+}
+
+.discover-wrap {
+    padding: 20px 30px;
+}
+
+.discover-content {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.discover-info .nft-artist-name {
+    font-family: var(--secondary-font);
+}
+
+.discover-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.discover-total {
+    font-size: 12px;
+    color: #858584;
+}
+
+.discover-price {
+    margin-top: 8px;
+    font-family: var(--secondary-font);
+}
+
+.works-list {
+    margin-top: 48px;
+    display: flex;
+    flex: 1;
+    gap: 30px;
+}
+
+.works-img img {
+    display: inline;
+}
+
+.works-card{
+    overflow: hidden;
+    padding: 10px 30px 30px 30px;
+    flex: 1;
+    background-color: var(--light-gray-color);
+    border-radius: 20px;
+    gap: 20px;
+    text-align: center;
+}
+
+.works-tilte {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.weekly-wrap {
+    background-color: var(--light-gray-color);
+    padding: 60px;
+    border-radius: 20px;
+    display: flex;
+    gap: 80px;
+}
+
+.weekly-wrap  .section-heading{
+    margin-bottom: 40px;
+}
+
+.weekly-text,
+.weekly-img {
+    flex: 1;
+}
+
+.subscription-form {
+    /* background-color: var(--white--color); */
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.subscription-form input {
+    width: 100%;
+    background-color: var(--white--color);
+    padding: 19px 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+/* footer */
+
+.footer {
+    background-color: var(--light-gray-color);
+}
+
+
+.footer-total {
+    display: flex;
+    /* justify-content: space-between; */
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.footer-1 {
+    width: 238px;
+}
+
+.footer-p {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.footer-content-p {
+    padding-bottom: 15px;
+}
+
+.footer-2 {
+    width: 392px;
+    text-align: center;
+}
+
+.fooetr-h2 {
+    padding-bottom: 25px;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: var(--secondary-font);
+}
+
+.footer-text {
+    padding-bottom: 20px;
+}
+
+.footer-3 {
+    width: 420px;
+}
+
+.footer-3-h2 {
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: capitalize;
+}
+
+.footer-3-p {
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+.footer-3-p {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-right: 90px;
+}
+
+.footer-img {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-subscribe {
+    display: flex;
+}
+
+.footer-subscribe input {
+    width: 100%;
+    overflow: hidden;
+    padding: 19px 20px;
+    border-radius: 20px;
+}
+
+.footer-final {
+    border-top: 1px solid #858584;
+}
+
+.p-final {
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
