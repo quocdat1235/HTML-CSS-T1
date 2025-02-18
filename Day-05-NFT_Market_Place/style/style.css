@@ -862,6 +862,10 @@ c2:
         gap: 20px;
     }
 
+    .discover-item:last-child {
+        display: block;
+    }
+
 
 
 
@@ -871,3 +875,5 @@ c2:
 
 
 }
+
+
