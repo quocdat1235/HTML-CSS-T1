@@ -20,7 +20,7 @@
       colors: {
         primarry: '#000',
         secondary: '#bebeb9',
-        gray: '#8a8a8a',
+        gray: '#ebebe9',
         lightGray: '#ebebe9'
       },
 
