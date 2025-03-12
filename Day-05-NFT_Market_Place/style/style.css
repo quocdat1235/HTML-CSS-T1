@@ -289,6 +289,13 @@ input {
     gap: 15px;
 }
 
+ul.content-collection .collection-total .collection-img img:hover {
+    overflow: hidden;
+    transform: scale(1.1,1.1);
+    transition: all 0.2s;
+    transition-duration: 300ms;
+}
+
 .collection-img > img,
 .collection-img-list > img
  {
@@ -596,7 +603,7 @@ c2:
 
 .subscription-form {
     /* background-color: var(--white--color); */
-    display: flex;
+    /* display: flex; */
     border-radius: 20px;
     overflow: hidden;
 }
@@ -604,9 +611,20 @@ c2:
 .subscription-form input {
     width: 100%;
     background-color: var(--white--color);
-    padding: 19px 20px;
+    padding: 17px 20px;
     border-radius: 20px;
     overflow: hidden;
+}
+.subscription-form ::placeholder{
+    font-size: 14px;
+}
+.div-relative {
+    position: relative;
+}
+.subscription-form .btn{
+    position: absolute;
+    top: 0;
+    right: 2px;
 }
 
 /* footer */
@@ -623,54 +641,25 @@ c2:
 }
 
 .footer-1 {
-    width: 238px;
-}
-
-.footer-p {
-    padding-top: 30px;
-    padding-bottom: 20px;
-}
-
-.footer-content-p {
-    padding-bottom: 15px;
+    width: 327px;
 }
 
 .footer-2 {
-    width: 392px;
-    text-align: center;
-}
-
-.fooetr-h2 {
-    padding-bottom: 25px;
-    font-size: 22px;
-    font-weight: 700;
-    font-family: var(--secondary-font);
-}
-
-.footer-text {
-    padding-bottom: 20px;
+    width: 303px;
 }
 
 .footer-3 {
     width: 420px;
 }
 
-.footer-3-h2 {
-    font-family: var(--secondary-font);
-    font-weight: 700;
-    font-size: 22px;
-    text-transform: capitalize;
+.footer-p {
+    column-span: 2;
+    margin-top: 25px;
+    margin-bottom: 20px;
 }
 
-.footer-3-p {
-    padding-top: 25px;
-    padding-bottom: 20px;
-}
-
-.footer-3-p {
-    padding-top: 30px;
-    padding-bottom: 20px;
-    padding-right: 90px;
+.footer-content-p {
+    padding-bottom: 15px;
 }
 
 .footer-img {
@@ -678,24 +667,48 @@ c2:
     gap: 10px;
 }
 
-.footer-subscribe {
-    display: flex;
+.fooetr-h2{
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.footer-list li {
+    margin-bottom: 20px;
+}
+
+.footer-3 .footer-h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.footer-3-p {
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .footer-subscribe input {
+    /* flex: 1; */
     width: 100%;
-    overflow: hidden;
-    padding: 19px 20px;
+    padding: 18px 20px;
     border-radius: 20px;
+}
+
+.footer-relative {
+    position: relative;
+}
+
+.footer-subscribe .btn {
+    position: absolute;
+    top: 1px;
+    right: 0px;
 }
 
 .footer-final {
     border-top: 1px solid #858584;
 }
 
-.p-final {
+.p-final{
     margin-top: 20px;
-    padding-bottom: 40px;
 }
 
 /* cú pháp Responsive */
